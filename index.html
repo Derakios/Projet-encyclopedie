@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <!--Head-->
     <head>
         <meta charset="UTF-8">
         <title>Encyclopedie Mangas</title>
-        <link rel="stylesheet/less" type="text/css" href="./style.less" />
+        <link rel="stylesheet/less" href="./style.less" />
         <script src="https://cdn.jsdelivr.net/npm/less"></script>
         <script src="https://unpkg.com/vue@3"></script>
     </head>
 
+    <!--Body-->
     <body>
         <div id="app">
-
+            <listearticles></listearticles>
         </div>
-        
+
+
+        <!-- Javascript : main, components et mountedApp -->
         <script src="main.js"></script>
+
+        <script src="./components/articles.js"></script>
 
         <script>
             const mountedApp = app.mount('#app')
