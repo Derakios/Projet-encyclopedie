@@ -1,3 +1,127 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+/*mise en forme du menu*/
+nav{ 
+    /*menu*/
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    ul{
+        list-style-type: none;
+        li{
+            float: left;
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+        ::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    a{ /*paramétrage des textes du menu*/ 
+        display: block;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid transparent;
+        padding: 10px 0px;
+        &:hover{ /*couleur au survol*/
+            color: orange;
+            border-bottom: 2px solid gold;
+        }
+    }
+}
+/*paramétrage du menu déroulant*/
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    li{
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+    a{
+        padding: 10px;
+        border-bottom: none;
+    }
+    :hover{
+        border-bottom: none;
+        background-color: rgba(200, 200, 200, 0.1);
+    }
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+/*paramétrage de l'icone pour le menu déroulant*/
+.deroulant > a::after{
+    content: "▼";
+    display: flex;
+    justify-content: right;
+    font-size: 12px;
+}
+/*formulaire*/
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 55px auto 0 auto;
+    width: 400px;
+    /* Encadré pour voir les limites du formulaire */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+  
+  form div + div {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* etiquettes soit alignées et ait toutes la même taille */
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  input, textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+  }
+  
+  input:focus, textarea:focus {
+    /* souligne légèrement les éléments actifs */
+    border-color: #000;
+  }
+  
+  textarea {
+    /*aligne les champs avec les etiquettes*/
+    vertical-align: top;
+  
+    /* donne de l'espace pour écrire */
+    height: 5em;
+  }
+  
+  .button {
+    /* place le bouton à la même position que les autres champs */
+    padding-left: 90px; /* même taille que les étiquettes */
+  }
+  
+  button {
+    /* Cette marge supplémentaire représente le même espace que celui
+       entre les étiquettes et les champs texte */
+    margin-left: .5em;
+  }
 *,
 *::before,
 *::after {
@@ -62,6 +186,46 @@
     margin-right: 5%;
     height: 100%;
     float: left;
+}
+  
+
+/* liste déroulante de choix*/
+label {
+    font-size: 1rem;
+    padding-right: 10px;
+    footer {
+        font-family: sans-serif;
+    }
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+
+footer {
+    font-size: .8rem;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+/* intégration url*/
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input,
+label {
+    margin: .4rem 0;
+}
+/* insertion image*/
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input,
+label {
+    margin: .4rem 0;
 }
 
 /* Resize images */
