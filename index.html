@@ -6,8 +6,11 @@
         <meta charset="UTF-8">
         <title>Encyclopedie Mangas</title>
         <link rel="stylesheet/less" href="./style.less" />
+
+        <!--Scripts à charger avant le reste de la page-->
         <script src="https://cdn.jsdelivr.net/npm/less"></script>
         <script src="https://unpkg.com/vue@3"></script>
+        <script src="https://unpkg.com/vue-router@4"></script>
     </head>
 
     <!--Body-->
@@ -74,18 +77,15 @@
 
 
         <div id="app">
-            <listearticles></listearticles>
+            <!--PARTIE DES ARTICLES-->
+            <router-view></router-view>
         </div>
 
 
         <!-- Javascript : main, components et mountedApp -->
-        <script src="main.js"></script>
-
         <script src="./components/articles.js"></script>
-
-        <script>
-            const mountedApp = app.mount('#app')
-        </script>
+        <script src="main.js"></script>
+        
     </body>
 
 </html>
