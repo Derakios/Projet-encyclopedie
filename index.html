@@ -16,21 +16,7 @@
     <!--Body-->
     <body>
         <!--menu-->
-        <nav>
-            <ul> 
-                 <li><a href="#">Accueil</a></li>
-                <!--menu déroulant-->
-                <li class="deroulant"><a>Articles</a>
-                    <ul class="sous">
-                        <li><a href="#">article 1</a></li>
-                        <li><a href="#">article 2</a></li>
-                        <li><a href="#">article 3</a></li>
-                        <li><a href="#">article 4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">création d'articles</a></li>
-            </ul>
-        </nav>
+        <nav-bar></nav-bar>
 <!-- formulaire de création d'article-->
         <form action="/page-recuperation" method="post"><!--amène à une page de traitement-->
             <div>
@@ -85,6 +71,7 @@
         <!-- Javascript : main, components et mountedApp -->
         <script src="./components/articles.js"></script>
         <script src="main.js"></script>
+        <script src="./components/nav.js"></script>
         
     </body>
 

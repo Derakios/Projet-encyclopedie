@@ -24,4 +24,6 @@ const app = Vue.createApp({
 })
 
 app.use(router)
+
+app.component('nav-bar',Nav)
 app.mount("#app")
