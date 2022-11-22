@@ -1,5 +1,10 @@
 const routes = [
-    { path: '/', component: articles }
+    { 
+        path: '/', component: home 
+    },
+    {
+        path: '/articles/:id', component: articles
+    }
 ]
 
 const router = VueRouter.createRouter({
