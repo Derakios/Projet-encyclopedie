@@ -1,0 +1,100 @@
+.border{
+    border-bottom: solid;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+/*formulaire*/
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 100px auto 0 auto;
+    width: 400px;
+    background-color: white;
+  }
+  form div + div {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* etiquettes soit alignées */
+    //display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  input, textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    //box-sizing: border-box;
+    //border: 1px solid #999;
+    .border();
+  }
+  
+  input:focus, textarea:focus {
+    /* souligne légèrement les éléments actifs */
+    border-color: @rouge;
+  }
+  
+  textarea {
+    /*aligne les champs avec les etiquettes*/
+    vertical-align: top;
+  
+    /* donne de l'espace pour écrire */
+    height: 5em;
+  }
+
+/* liste déroulante de choix*/
+label {
+    font-size: 1rem;
+    padding-right: 10px;
+    footer {
+        font-family: sans-serif;
+    }
+}
+#categorie{
+  &:hover{ /*couleur au survol*/
+    color: @rouge;
+    border-bottom: 2px solid @rouge;
+  }
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+/* intégration url*/
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input,
+label {
+    margin: .4rem 0;
+}
+/* insertion image dans le formulaire*/
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input,
+label {
+    margin: .4rem 0;
+}
+.button {
+    /* place le bouton à la même position que les autres champs */
+    padding-left: 90px; /* même taille que les étiquettes */
+    
+  }
+  
+  button {
+    /* permet d'avoir un espacement entre le champs et le bouton*/
+    margin-left: .5em;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    &:hover{ /*couleur au survol*/
+      color: white;
+      background-color: @rouge;
+    }
+  }

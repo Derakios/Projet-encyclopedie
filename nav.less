@@ -1,0 +1,38 @@
+/*mise en forme du menu*/
+nav{ 
+    /*menu*/
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    ul{
+        list-style-type: none;
+        li{
+            float: left;
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+        ::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    a{ /*paramétrage des textes du menu*/ 
+        display: block;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid transparent;
+        padding: 10px 0px;
+        &:hover{ /*couleur au survol*/
+            color: @rouge;
+            border-bottom: 2px solid @rouge;
+        }
+    }
+}
+.logo{
+    width: 20%;
+    
+}

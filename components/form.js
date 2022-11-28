@@ -5,11 +5,11 @@ const form = {
             <form v-if="!swap" method="post" @submit.prevent="onSubmit">
                 <!--amène à une page de traitement-->
                 <div>
-                    <label for="article-name">Nom de l'article :</label>
-                    <input required type="text" id="article-name" name="article-name" v-model="nomArticle">
+                    <label for="article-name"></label>
+                    <input required type="text" id="article-name" placeholder="Nom de l'article" name="article-name" v-model="nomArticle">
                 </div>
                 <div>
-                    <label for="article-categorie">catégorie de l'article :</label>
+                    <label for="article-categorie">Choix de la catégorie :</label>
                     <select v-model="categorieArticle" required name="article-categorie" id="article-categorie">
                         <option value="" disabled selected hidden>--choisissez une catégorie--</option>
                         <option value="Shonen">Shonen</option>
@@ -18,12 +18,12 @@ const form = {
                     </select>
                 </div>
                 <div>
-                    <label for="article-texte">Description de l'article :</label>
-                    <textarea v-model="descriptionArticle" required id="article-texte" name="article-texte"></textarea>
+                    <label for="article-texte"></label>
+                    <textarea v-model="descriptionArticle" required id="article-texte" placeholder="Contenu de l'article" name="article-texte"></textarea>
                 </div>
                 <div>
-                    <label for="article-auteur">Auteur :</label>
-                    <input v-model="auteurArticle" required type="text" id="article-auteur" name="article-auteur">
+                    <label for="article-auteur"></label>
+                    <input v-model="auteurArticle" required type="text" id="article-auteur" placeholder="Auteur" name="article-auteur">
                 </div>
                 <div>
                     <label for="article-source">Entrer l'url de votre source:</label>
