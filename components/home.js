@@ -12,10 +12,8 @@ const home = {
     },
     template :
     `
-    <div style="margin-top: 80px">Accueil</div>
-
     <div>
-        Liste des mangas
+        Il y a actuellement <span> {{ nombreDeMangas }} </span> mangas disponibles !
         <ul>
             <li v-for="manga in listManga">
                 <router-link :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}">
@@ -28,5 +26,10 @@ const home = {
     <footer>
         <p>©2022|Killian Jousseaume, Enzo Guiguen, Lucie Briand</p>
     </footer>
-    `
+    `,
+    computed: {
+        nombreDeMangas() {
+            return this.listManga.length
+        }
+    }
 }
