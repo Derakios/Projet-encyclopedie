@@ -17,58 +17,21 @@
     <!--Body-->
 
     <body>
-        <!--menu-->
-        <nav-bar></nav-bar>
-
 
         <div id="app">
-            <!--PARTIE DES ARTICLES-->
-            <router-view></router-view>
+            <!--menu-->
+            <nav-bar></nav-bar>
+            
+            <!--Les différentes vues-->
+            <div class="viewClassAll">
+                <router-view></router-view>
+            </div>
 
-
-            <!--FORMULAIRE D'AJOUT D'ARTICLES-->
-            <form action="/page-recuperation" method="post">
-                <!--amène à une page de traitement-->
-                <div>
-                    <label for="nom-article">Nom de l'article :</label>
-                    <input type="text" id="name" name="article-name">
-                </div>
-                <div>
-                    <label for="categorie">catégorie de l'article:</label>
-                    <select name="categorie" id="categorie">
-                        <option value="">--choisissez une catégorie--</option>
-                        <option value="categ1">Categ1</option>
-                        <option value="categ2">Categ2</option>
-                        <option value="categ3">Categ3</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="texte">texte de l'article</label>
-                    <textarea id="texte" name="texte-article"></textarea>
-                </div>
-                <div>
-                    <label for="nom-auteur">Auteur :</label>
-                    <input type="text" id="auteur" name="user_name">
-                </div>
-                <div>
-                    <label for="url">Entrer l'url de votre source:</label>
-                    <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*"
-                        size="30" required>
-                </div>
-                <div>
-                    <label for="avatar">Choisissez une image d'illustration:</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                </div>
-
-                <div class="button">
-                    <button type="submit">Envoyer</button>
-                </div>
-
-            </form>
         </div>
 
 
         <!-- Javascript : main, components -->
+        <script src="./components/form.js"></script>
         <script src="./components/home.js"></script>
         <script src="./components/articles.js"></script>
         <script src="./components/nav.js"></script>

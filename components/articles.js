@@ -2,11 +2,10 @@ const articles = {
     template:
         `
     <div id="divArticles">
-        <div id="navigationArticles"></div>
         <div id="afficheArticle">
             <div class="blocImageManga">
                 <div v-for="manga in listManga"> 
-                    <div v-if="manga.id == $route.params.id">
+                    <div v-if="manga.idM == $route.params.idM">
                         <img class="imageManga" :src="manga.image"> 
                     </div>
                 </div>
@@ -16,12 +15,12 @@ const articles = {
                 <div class="texteManga">
 
                     <div v-for="manga in listManga"> 
-                        <div v-if="manga.id == $route.params.id">
+                        <div v-if="manga.idM == $route.params.idM">
                             <p>{{manga.nom}}</p>
                             <p>{{manga.auteur}}</p>
                             <p>{{manga.categorie}}</p>
                             <p>{{manga.description}}</p>
-                            <p>{{manga.source}}</p>  
+                            <a :href="manga.source" target="_blank">Lien Nautiljon</a>  
                         </div>
                     </div>
 
@@ -29,16 +28,21 @@ const articles = {
             </div>
         </div>
         <div id="articlesConnexes">
-            <router-link to="/" class="lesManga" v-for="manga in mangas">
-                <img :src="manga.image">
-            </router-link>
+            <h3>Articles connexes</h3>
+                <div class="divImageWidth">
+                <template v-for="manga in listManga">
+                    <router-link :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}" class="lesManga" v-if="manga.categorie == categorie">
+                        <img :src="manga.image" >
+                    </router-link>
+                </template>
+                </div>
+                <div class="viewAllManga">
+                    <router-link to="/">Voir tous les articles</router-link>
+                </div>
         </div>
     </div>
     `,
-    /* - Faire un composant pour l'affichage du manga ET des connexes
-       - Faire un composant chacun pour les 2 ? Lequel serait le plus simple (article & connexes)?
-
-       - Je ne peux pas avancer sur l'affichage du manga selectionné car il faudrait récupérer le manga par
-       son ID pour afficher uniquement ses infos à lui, ce qui n'est pas le cas actuellement.
-     */
+    props: {
+        categorie: String
+    }
 }

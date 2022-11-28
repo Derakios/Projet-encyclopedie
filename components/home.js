@@ -12,30 +12,21 @@ const home = {
     },
     template :
     `
-    <div>Accueil</div>
+    <div style="margin-top: 80px">Accueil</div>
 
     <div>
         Liste des mangas
         <ul>
             <li v-for="manga in listManga">
-                <router-link :to="{name:'article', params:{id:manga.id}}">
-                {{manga.nom}}
+                <router-link :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}">
+                {{manga.nom}} - {{manga.categorie}}
                 </router-link>
             </li>
         </ul>
     </div>
     
+    <footer>
+        <p>©2022|Killian Jousseaume, Enzo Guiguen, Lucie Briand</p>
+    </footer>
     `
-    ,
-    methods: {
-
-    }
 }
-
-/**
- <div v-for="manga in listManga"> 
-    <div v-if="{manga.categorie=='Shonen'}">
-        nom : {{listManga[0].nom}}  
-    </div>
-    </div>
-*/
