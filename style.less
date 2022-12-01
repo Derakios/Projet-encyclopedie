@@ -6,29 +6,32 @@
 *,
 *::before,
 *::after {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+}
+
+//mixin
+.elementWAndH(@width, @height) {
+	width: @width;
+	height: @height;
 }
 
 /*css pour les articles*/
 #divArticles {
-    width: 100%;
-    height: 650px;
+	.elementWAndH(100%, 650px);
 }
 
 #navigationArticles {
     background-color: red;
-    width: 100%;
-    height: 10%;
+	.elementWAndH(100%, 10%)
 }
 
 #afficheArticle {
-    width: 100%;
-    height: 80%;
+	.elementWAndH(100%, 80%)
 }
 
 #articlesConnexes {
-    width: 100%;
-    height: 20%;
+	.elementWAndH(100%, 20%);
     text-align: center;
     h3 {
         margin-bottom: 0 !important;
@@ -90,17 +93,119 @@
 
 /*css de la div qui entoure le router-view (soit tout le contenu)*/
 .viewClassAll {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
+// css du footer
 footer {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 5px;
-    background-color: @rouge;
+    padding: 15px;
     color: #fff;
 }
 
 .viewAllManga {
     margin-top: 20px;
+}
+
+//margin top pour espacer la liste des manga et la navbar
+.divListMAccueil {
+    margin-top: 10%;
+}
+
+
+// CSS des cartes sur la page d'accueil
+.tilesWrap {
+	padding: 0;
+	margin: 50px auto;
+	list-style: none;
+	text-align: center;
+}
+.tilesWrap {
+	li {
+		display: inline-block;
+		width: 20%;
+		min-width: 200px;
+		max-width: 230px;
+		padding: 80px 20px 40px;
+		position: relative;
+		vertical-align: top;
+		margin: 10px;
+		min-height: 25vh;
+		background: #262a2b;
+		border: 1px solid #252727;
+		text-align: left;
+	}
+}
+.tilesWrap {
+	li {
+		h2 {
+			font-size: 114px;
+			margin: 0;
+			position: absolute;
+			opacity: 0.2;
+			top: 50px;
+			right: 10px;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+}
+.tilesWrap {
+	li {
+		h3 {
+			font-size: 20px;
+			color: #b7b7b7;
+			margin-bottom: 5px;
+		}
+	}
+} 
+
+.tilesWrap {
+	li:hover {
+		h2 {
+			top: 0px;
+			opacity: 0.6;
+		}
+	}
+}
+
+.tilesWrap { 
+	li:after {
+		position: absolute;
+		width: 40%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: rgba(255, 255, 255, 0.02);
+	}
+}
+
+.bottomBtnM {
+	position: absolute;
+	bottom: 0;
+	display: block;
+    width: 80%;
+    height: 25px;
+    background: @rouge;
+    padding: 10px;
+	padding-left: 0 !important;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+	text-decoration: none;
+}
+
+// css de la div générale
+#app {
+	position: relative;
+	min-height: 100vh;
+}
+
+// Utilisation du if (pas très utile certe, mai sau moins on sait le faire :D )
+@background-color-footer: true;
+
+footer {
+	background-color: if(@background-color-footer, @rouge, @argent);
 }

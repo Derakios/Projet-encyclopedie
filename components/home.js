@@ -14,13 +14,16 @@ const home = {
     `
     <div>
         Il y a actuellement <span> {{ nombreDeMangas }} </span> mangas disponibles !
-        <ul>
+        <ul class="tilesWrap">
             <li v-for="manga in listManga">
-                <router-link :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}">
-                {{manga.nom}} - {{manga.categorie}}
+                <h2>{{manga.idM}}</h2>
+                <h3>{{manga.nom}}</h3>
+                <h4>{{manga.categorie}}</h4>
+                <router-link class="bottomBtnM" :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}">
+                    Voir
                 </router-link>
             </li>
-        </ul>
+        </ul>   
     </div>
     
     <footer>
