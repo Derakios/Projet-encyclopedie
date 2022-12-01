@@ -17,7 +17,7 @@ const home = {
         <br>
         Fan d’animé ? Ne vous posez plus de questions et venez découvrir l'univers vaste et multiple de notre encyclopédie.
         Échangez avec notre communauté, restez informé tout en vous divertissant !
-        <br>
+        <br> <!--fait par enzo car il y a des problèmes avec son git-->
         <br>
         Il y a actuellement <span> {{ nombreDeMangas }} </span> mangas disponibles :) !
         <ul class="tilesWrap">
