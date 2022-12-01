@@ -16,10 +16,10 @@ const articles = {
 
                     <div v-for="manga in listManga"> 
                         <div v-if="manga.idM == $route.params.idM">
-                            <p>{{manga.nom}}</p>
-                            <p>{{manga.auteur}}</p>
-                            <p>{{manga.categorie}}</p>
-                            <p>{{manga.description}}</p>
+                            <p><b>Titre : </b>{{manga.nom}}</p>
+                            <p><b>Auteur : </b>{{manga.auteur}}</p>
+                            <p><b>Genre : </b>{{manga.categorie}}</p>
+                            <p><b>Description : </b>{{manga.description}}</p>
                             <a :href="manga.source" target="_blank">Lien Nautiljon</a>  
                         </div>
                     </div>

@@ -3,34 +3,42 @@
 @argent: #c9b6a6;
 @rouge: #a42e28;
 @clair: #e3908c;
+
+// utilisation de guards (voir la diff dans la page articles)
+@fonctionnel: true;
+
+#cardColors() {
+	card-background: #252727;
+	card-texte: #fff;
+}
+
 *,
 *::before,
 *::after {
   	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	margin: 0;
 }
 
-//mixin
+//mixin & guards
 .elementWAndH(@width, @height) {
 	width: @width;
 	height: @height;
 }
 
-/*css pour les articles*/
-#divArticles {
+/*css pour les articles avec guards*/
+#divArticles when (@fonctionnel = true){
 	.elementWAndH(100%, 650px);
 }
 
-#navigationArticles {
-    background-color: red;
+#navigationArticles when (@fonctionnel = true) {
+    background-color: @rouge;
 	.elementWAndH(100%, 10%)
 }
 
-#afficheArticle {
+#afficheArticle when (@fonctionnel = true) {
 	.elementWAndH(100%, 80%)
 }
 
-#articlesConnexes {
+#articlesConnexes when (@fonctionnel = true) {
 	.elementWAndH(100%, 20%);
     text-align: center;
     h3 {
@@ -100,7 +108,7 @@
 footer {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 15px;
+    padding: 5px;
     color: #fff;
 }
 
@@ -132,7 +140,7 @@ footer {
 		vertical-align: top;
 		margin: 10px;
 		min-height: 25vh;
-		background: #262a2b;
+		background: #cardColors[card-background];
 		border: 1px solid #252727;
 		text-align: left;
 	}
@@ -154,7 +162,6 @@ footer {
 	li {
 		h3 {
 			font-size: 20px;
-			color: #b7b7b7;
 			margin-bottom: 5px;
 		}
 	}
@@ -191,7 +198,7 @@ footer {
 	padding-left: 0 !important;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    color: #cardColors[card-texte];
     font-weight: bold;
     line-height: 25px;
 	text-decoration: none;
@@ -209,3 +216,11 @@ footer {
 footer {
 	background-color: if(@background-color-footer, @rouge, @argent);
 }
+
+// Utilisation du each pour colorer le texte des cartes sur l'accueil
+@list: 1, 2, 3;
+each(@list, {
+	.c-@{value} {
+		color: white;
+	}
+})

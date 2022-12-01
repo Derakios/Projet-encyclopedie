@@ -92,9 +92,11 @@ label {
     border-radius: 20px;
     width: 150px;
     height: 50px;
-    background-color: white;
+
+    //lighten & darken (fait par Enzo car son git fonctionne mal)
+    background-color: lighten(@rouge, 40%);
     &:hover{ /*couleur au survol*/
       color: white;
-      background-color: @rouge;
+      background-color:darken(@rouge, 10%);
     }
   }

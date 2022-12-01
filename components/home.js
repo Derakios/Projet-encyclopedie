@@ -13,12 +13,18 @@ const home = {
     template :
     `
     <div>
-        Il y a actuellement <span> {{ nombreDeMangas }} </span> mangas disponibles !
+        L’ENCYCLOPÉDIE DE TOUT LES MANGAS DU NET !
+        <br>
+        Fan d’animé ? Ne vous posez plus de questions et venez découvrir l'univers vaste et multiple de notre encyclopédie.
+        Échangez avec notre communauté, restez informé tout en vous divertissant !
+        <br>
+        <br>
+        Il y a actuellement <span> {{ nombreDeMangas }} </span> mangas disponibles :) !
         <ul class="tilesWrap">
             <li v-for="manga in listManga">
-                <h2>{{manga.idM}}</h2>
-                <h3>{{manga.nom}}</h3>
-                <h4>{{manga.categorie}}</h4>
+                <h2 class="c-1">{{manga.idM}}</h2>
+                <h3 class="c-2">{{manga.nom}}</h3>
+                <h4 class="c-3">{{manga.categorie}}</h4>
                 <router-link class="bottomBtnM" :to="{name:'article', params:{idM:manga.idM, categorie:manga.categorie}}">
                     Voir
                 </router-link>
