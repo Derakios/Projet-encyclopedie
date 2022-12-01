@@ -122,7 +122,7 @@ footer {
 }
 
 
-// CSS des cartes sur la page d'accueil
+//----------------------CSS des cartes sur la page d'accueil----------------------
 .tilesWrap {
 	padding: 0;
 	margin: 50px auto;
@@ -151,7 +151,7 @@ footer {
 			font-size: 114px;
 			margin: 0;
 			position: absolute;
-			opacity: 0.2;
+			opacity: percentage(0.2); // utilisation d'une fonction Math
 			top: 50px;
 			right: 10px;
 			transition: all 0.3s ease-in-out;
@@ -171,7 +171,7 @@ footer {
 	li:hover {
 		h2 {
 			top: 0px;
-			opacity: 0.6;
+			opacity: percentage(0.6); // utilisation d'une fonction Math
 		}
 	}
 }
@@ -203,6 +203,8 @@ footer {
     line-height: 25px;
 	text-decoration: none;
 }
+//-----------------Fin css des cartes de la page d'accueil----------------------
+
 
 // css de la div générale
 #app {
